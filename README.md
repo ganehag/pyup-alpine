@@ -18,7 +18,7 @@ and when to run it.
 
 ```bash
 # m h dom mon dow  command
-  0 0 *   *   *    pyup --provider gitlab --repo <user>/<repo> --user-token XXXXXXXXXXXXX@https://gitlab.com
+  0 0 *   *   *    pyup --provider gitlab --repo USER/REPO --user-token XXXXXXXXXXXXX@https://gitlab.com
 ```
 
 With one new line for each repo. Information about how and where to get the
@@ -43,5 +43,5 @@ the cron file. You can either do this by entering the container:
 
 Or calling from outside docker.
 
-> $ docker exec -it pyup-checker pyup --provider gitlab --repo <user>/<repo> \
+> $ docker exec -it pyup-checker pyup --provider gitlab --repo USER/REPO \
 >   --user-token XXXXX@https://git.noda.se --initial
