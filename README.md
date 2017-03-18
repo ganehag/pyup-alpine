@@ -39,7 +39,7 @@ merge request for each change once the software runs.
 To run this **initial** step you simple append `--initial` to each of the commands from
 the cron file. You can either do this by entering the container:
 
-> $ docker exec -it pyup-checker bash
+> $ docker exec -it pyup-checker ash
 
 Or calling from outside docker.
 
