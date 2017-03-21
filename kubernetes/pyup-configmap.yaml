@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pyup-crontabs
+data:
+  root: |-
+    # m h dom mon dow  command
+      0 0 *   *   *    pyup --provider gitlab --repo USER/REPO --user-token "$SECRET_TOKEN"@https://gitlab.com

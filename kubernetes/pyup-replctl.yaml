@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: pyup
+  labels:
+    name: pyup
+spec:
+  replicas: 1
+  selector:
+    run: pyup
+  template:
+    metadata:
+      name: pyup
+      labels:
+        name: pyup
+    spec:
+      containers:
+        - image: ganehag/pyup-alpine:latest
+          name: pyup
+          env:
+            - name: SECRET_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: pyup-tokens
+                  key: mainuser
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "256Mi"
+              cpu: "100m"
+          volumeMounts:
+            - name: pyup-crontabs
+              mountPath: /var/spool/cron/crontabs/
+              readOnly: true
+      volumes:
+        - name: pyup-crontabs
+          configMap:
+            name: pyup-crontabs
