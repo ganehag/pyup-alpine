@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:latest
 
 LABEL maintainer "mikael.brorsson@gmail.com"
 
@@ -13,7 +13,7 @@ RUN apk add --no-cache tini python3 ca-certificates && \
     # pip install pyupio && \
     mkdir -p /opt/ && \
     cd /opt && \
-    git clone -b gitlab https://github.com/LearntEmail/pyup && \
+    git clone https://github.com/pyupio/pyup.git && \
     cd pyup && \
     pip install -e /opt/pyup && \
     apk del build-dependencies

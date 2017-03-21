@@ -7,8 +7,7 @@ A tool to update all your project's requirement files with on GitHub.
 A Docker image to run PyUp using CRONd
 
 ## How to use it
-This version of PyUp supports GitLab using the fork from `LearntEmail/pyup`.
-At the time of writing this support has not yet been merged into mainline.
+This version of PyUp supports GitLab using the master branch from `pyupio/pyup` on GitHub.
 
 ## Example config
 The only thing required is a crontab file for `root`. This file then needs to
