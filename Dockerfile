@@ -15,6 +15,7 @@ RUN apk add --no-cache tini python3 ca-certificates && \
     cd /opt && \
     git clone https://github.com/pyupio/pyup.git && \
     cd pyup && \
+    git checkout tags/0.8.2 && \
     pip install -e /opt/pyup && \
     apk del build-dependencies
 
